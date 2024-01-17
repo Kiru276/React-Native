@@ -13,8 +13,8 @@ export default function App() {
         <ImageViewer placeholderImageSource={PlaceholderImage} />
       </View>
       <View style={styles.footerContainer}>
-        <Button label="Elige una foto"></Button>
-        <Button label="Usar esta misma foto"></Button>
+        <Button theme="primary" label="Elige una foto"></Button> {/* theme=primary indica uso de un boton especial  */}
+        <Button label="Usar esta misma foto"></Button> {/* Ejemplo de uso por defecto un boton normal */}
       </View>
       <StatusBar style="auto" />
     </View>
