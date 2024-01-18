@@ -9,6 +9,7 @@ import { useState } from 'react';
  import IconButton from './IconButton';
  import EmojiPicker from "./EmojiPicker";
  import EmojiList from './EmojiList';
+ import EmojiSticker from './EmojiSticker';
 
 const PlaceholderImage = require('./assets/images/background-image.png');
 
@@ -55,6 +56,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer placeholderImageSource={PlaceholderImage} selectedImage={selectedImage}/> 
+        {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
       </View>
       {showAppOptions ? (
         <View style={styles.optionsContainer}>
