@@ -28,7 +28,7 @@ export default function Button({ label, theme, onPress }) {
       //Por defecto si es otro boton como "Usar esta misma foto"
       return (
         <View style={styles.buttonContainer}>
-            <Pressable style={styles.button} onPress={() => alert('Me presionaste T.T')}>
+            <Pressable style={styles.button} onPress={onPress}>
               <Text style={styles.buttonLabel}>{label}</Text>
             </Pressable>
           </View>
