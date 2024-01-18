@@ -1,20 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
+import { useState } from 'react';
 
  import ImageViewer from './ImageViewer';
- import Button from './Button'; 
+ import Button from './Button';
+ import * as ImagePicker from 'expo-image-picker';
 
 const PlaceholderImage = require('./assets/images/background-image.png');
 
 export default function App() {
+  const [ selectedImage, setSelectedImage ] = useState(null);
+
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+    } else {
+      alert('Ey! No elegiste ninguna foto');
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <ImageViewer placeholderImageSource={PlaceholderImage} />
+        <ImageViewer placeholderImageSource={PlaceholderImage} selectedImage={selectedImage}/> 
       </View>
       <View style={styles.footerContainer}>
-        <Button theme="primary" label="Elige una foto"></Button> {/* theme=primary indica uso de un boton especial  */}
-        <Button label="Usar esta misma foto"></Button> {/* Ejemplo de uso por defecto un boton normal */}
+        <Button label="Elige una foto" theme="primary"  onPress={pickImageAsync}></Button> 
+        <Button label="Usar esta misma foto"></Button> 
       </View>
       <StatusBar style="auto" />
     </View>

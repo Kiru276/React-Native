@@ -1,7 +1,7 @@
 import { StyleSheet, Pressable, View, Text } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-export default function Button({ label, theme }) {
+export default function Button({ label, theme, onPress }) {
     if (theme === "primary") { // Si es boton "Elegir foto"
         return (
           // Borde amarillo redonde de boton "Elegir foto
@@ -10,7 +10,7 @@ export default function Button({ label, theme }) {
             <Pressable
             
                 style={[styles.button, { backgroundColor: "#fff" }]} //color de fondo del boton "Elegir foto"
-                onPress={() => alert('You pressed a button.')}
+                onPress={onPress}
             >
                 <FontAwesome
                     name="picture-o"
@@ -18,7 +18,7 @@ export default function Button({ label, theme }) {
                     color="#25292e" //Color icono
                     style={styles.buttonIcon} //Estilos especiales de icono (espaciado entre icono y texto)
                 />
-              <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>  {/* Estilos personalizados y Color de texto del boton "Elegir foto" */}
+              <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>  
 
             </Pressable>
           </View>
@@ -28,7 +28,7 @@ export default function Button({ label, theme }) {
       //Por defecto si es otro boton como "Usar esta misma foto"
       return (
         <View style={styles.buttonContainer}>
-            <Pressable style={styles.button} onPress={() => alert('You pressed a button.')}>
+            <Pressable style={styles.button} onPress={() => alert('Me presionaste T.T')}>
               <Text style={styles.buttonLabel}>{label}</Text>
             </Pressable>
           </View>
