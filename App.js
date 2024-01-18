@@ -47,8 +47,6 @@ export default function App() {
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
       setShowAppOptions(true);
-    } else {
-      alert('Ey! No elegiste ninguna foto');
     }
   };
 
@@ -61,9 +59,9 @@ export default function App() {
       {showAppOptions ? (
         <View style={styles.optionsContainer}>
           <View style={styles.optionsRow}>
-            <IconButton icon="refresh" label="Reset" onPress={onReset} />
+            <IconButton icon="refresh" label="Volver" onPress={onReset} />
             <CircleButton onPress={onAddSticker} />
-            <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync} />
+            <IconButton icon="save-alt" label="Guardar" onPress={onSaveImageAsync} />
           </View>
         </View>
       ) : (
