@@ -1,15 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { useState } from 'react';
+import * as ImagePicker from 'expo-image-picker';
 
- import ImageViewer from './ImageViewer';
- import Button from './Button';
- import * as ImagePicker from 'expo-image-picker';
- import CircleButton from './CircleButton';
- import IconButton from './IconButton';
- import EmojiPicker from "./EmojiPicker";
- import EmojiList from './EmojiList';
- import EmojiSticker from './EmojiSticker';
+ import ImageViewer from './components/ImageViewer';
+ import Button from './components/Button';
+ import CircleButton from './components/CircleButton';
+ import IconButton from './components/IconButton';
+ import EmojiPicker from "./components/EmojiPicker";
+ import EmojiList from './components/EmojiList';
+ import EmojiSticker from './components/EmojiSticker';
 
 const PlaceholderImage = require('./assets/images/background-image.png');
 

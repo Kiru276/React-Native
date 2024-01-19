@@ -5,14 +5,14 @@ import { StyleSheet, FlatList, Image, Platform, Pressable } from 'react-native';
 // LISTAMIENTO DE STICKERS DENTRO DE VENTANA DE DESPLIEGUE DE STICKERS (EmojiPicker.js)
 export default function EmojiList({ onSelect, onCloseModal }) {
   const [emoji] = useState([
-    require('./assets/images/emoji1.png'),
-    require('./assets/images/emoji2.png'),
-    require('./assets/images/emoji3.png'),
-    require('./assets/images/emoji4.png'),
-    require('./assets/images/emoji5.png'),
-    require('./assets/images/emoji6.png'),
-    require('./assets/images/emoji7.png'),
-    require('./assets/images/emoji8.png'),
+    require('../assets/images/emoji1.png'),
+    require('../assets/images/emoji2.png'),
+    require('../assets/images/emoji3.png'),
+    require('../assets/images/emoji4.png'),
+    require('../assets/images/emoji5.png'),
+    require('../assets/images/emoji6.png'),
+    require('../assets/images/emoji7.png'),
+    require('../assets/images/emoji8.png'),
   ]);
 
   return (
