@@ -1,7 +1,10 @@
 import { StyleSheet, Pressable, View, Text } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
+
+// Los 2 botones del inicio
 export default function Button({ label, theme, onPress }) {
+    // Boton "Elegir foto"
     if (theme === "primary") { // Si es boton "Elegir foto"
         return (
           // Borde amarillo redonde de boton "Elegir foto
@@ -24,8 +27,9 @@ export default function Button({ label, theme, onPress }) {
           </View>
         );
       }
-    
-      //Por defecto si es otro boton como "Usar esta misma foto"
+      
+      // Boton "Usar esta misma foto"
+      // Por defecto si es otro boton como "Usar esta misma foto"
       return (
         <View style={styles.buttonContainer}>
             <Pressable style={styles.button} onPress={onPress}>

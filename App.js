@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
 
+// Importacion de nuestros componentes de la app
  import ImageViewer from './components/ImageViewer';
  import Button from './components/Button';
  import CircleButton from './components/CircleButton';
@@ -11,6 +12,7 @@ import * as ImagePicker from 'expo-image-picker';
  import EmojiList from './components/EmojiList';
  import EmojiSticker from './components/EmojiSticker';
 
+ // La foto de fondo por default
 const PlaceholderImage = require('./assets/images/background-image.png');
 
 //DEFAULT APP.JS
@@ -18,9 +20,11 @@ export default function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [pickedEmoji, setPickedEmoji] = useState(null);
 
+  // Al ser falso, quita la ventana model de los stickers
   const onReset = () => {
     setShowAppOptions(false);
   };
+
 
   const onAddSticker = () => {
     setIsModalVisible(true);

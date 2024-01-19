@@ -1,5 +1,6 @@
 import { StyleSheet, Image } from 'react-native';
 
+// Contenedor de foto (como se va a mostrar)
 export default function ImageViewer({ placeholderImageSource, selectedImage }) {
   const ImageSource = selectedImage ? { uri: selectedImage } : placeholderImageSource;
 

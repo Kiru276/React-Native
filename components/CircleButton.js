@@ -1,6 +1,7 @@
 import { View, Pressable, StyleSheet } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
+// Boton de enmedio circular que se muestra al seleccionar foto
 export default function CircleButton({ onPress }) {
   return (
     <View style={styles.circleButtonContainer}>

@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, Text } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
+// Iconos varios que se muestran al seleccionar una foto
 //icon=el icono que se mostrara, label=el texto que se mostrara, onPress=la funcion que se ejecutara al presionar el boton
 export default function IconButton({ icon, label, onPress }) {
   return (
