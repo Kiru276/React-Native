@@ -5,6 +5,8 @@ import * as ImagePicker from 'expo-image-picker';
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import * as MediaLibrary from 'expo-media-library';
 import { captureRef } from 'react-native-view-shot';
+import domtoimage from 'dom-to-image';
+import { Platform } from 'react-native';
 
 // Importacion de nuestros componentes de la app
  import ImageViewer from './components/ImageViewer';
@@ -46,20 +48,39 @@ export default function App() {
   };
 
   const onSaveImageAsync = async () => {
+  if (Platform.OS !== 'web') {
+    console.log("sdjkladhna");
     try {
       const localUri = await captureRef(imageRef, {
         height: 440,
         quality: 1,
       });
-
       await MediaLibrary.saveToLibraryAsync(localUri);
       if (localUri) {
-        alert("Se guardo tu imagen!! :D");
+        alert('Se guardo la imagen!! :D');
       }
     } catch (e) {
       console.log(e);
     }
-  };
+  } else {
+    try {
+      const dataUrl = await domtoimage.toJpeg(imageRef.current, {
+        quality: 0.95,
+        width: 320,
+        height: 440,
+      });
+
+      let link = document.createElement('a');
+      link.download = 'sticker-smash.jpeg';
+      link.href = dataUrl;
+      link.click();
+      alert('Se guardo la imagen!! :D');
+    } catch (e) {
+      console.log(e);
+    }
+  }
+};
+
 
 
   const [ selectedImage, setSelectedImage ] = useState(null);
