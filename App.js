@@ -7,6 +7,7 @@ import * as MediaLibrary from 'expo-media-library';
 import { captureRef } from 'react-native-view-shot';
 import domtoimage from 'dom-to-image';
 import { Platform } from 'react-native';
+import Swal from 'sweetalert2';
 
 // Importacion de nuestros componentes de la app
  import ImageViewer from './components/ImageViewer';
@@ -49,7 +50,6 @@ export default function App() {
 
   const onSaveImageAsync = async () => {
   if (Platform.OS !== 'web') {
-    console.log("sdjkladhna");
     try {
       const localUri = await captureRef(imageRef, {
         height: 440,
@@ -74,7 +74,11 @@ export default function App() {
       link.download = 'sticker-smash.jpeg';
       link.href = dataUrl;
       link.click();
-      alert('Se guardo la imagen!! :D');
+      Swal.fire({
+        title: 'Guardado',
+        text: 'Se guardo la imagen correctamente!! :D',
+        icon: 'success',
+      });
     } catch (e) {
       console.log(e);
     }
