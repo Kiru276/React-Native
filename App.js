@@ -71,7 +71,7 @@ export default function App() {
       });
 
       let link = document.createElement('a');
-      link.download = 'sticker-smash.jpeg';
+      link.download = 'foto.jpeg';
       link.href = dataUrl;
       link.click();
       Swal.fire({
@@ -129,7 +129,7 @@ export default function App() {
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
         <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
       </EmojiPicker>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </GestureHandlerRootView>
   );
 }
