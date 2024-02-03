@@ -49,6 +49,7 @@ export default function App() {
   };
 
   const onSaveImageAsync = async () => {
+  // Mensaje de guardado si plataforma es un dispotivo movil
   if (Platform.OS !== 'web') {
     try {
       const localUri = await captureRef(imageRef, {
@@ -64,6 +65,7 @@ export default function App() {
     }
   } else {
     try {
+      // Mensaje de guardado si plataforma es web
       const dataUrl = await domtoimage.toJpeg(imageRef.current, {
         quality: 0.95,
         width: 320,
